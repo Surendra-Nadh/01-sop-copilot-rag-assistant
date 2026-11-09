@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Scientist Learning Timetable - 8 Weeks</title>
+<style>
+  @page {
+    size: A4 landscape;
+    margin: 1cm;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 9pt;
+    line-height: 1.4;
+    color: #1a1a2e;
+    background: #fff;
+  }
+  .header {
+    text-align: center;
+    padding: 20px 0 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+  .header h1 { font-size: 22pt; margin-bottom: 5px; }
+  .header p { font-size: 11pt; opacity: 0.9; }
+  .header .subtitle { font-size: 10pt; margin-top: 5px; opacity: 0.8; }
+
+  .overview {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .overview-card {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+  }
+  .overview-card.phase1 { background: linear-gradient(135deg, #11998e, #38ef7d); }
+  .overview-card.phase2 { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+  .overview-card.phase3 { background: linear-gradient(135deg, #fa709a, #fee140); }
+  .overview-card.phase4 { background: linear-gradient(135deg, #a18cd1, #fbc2eb); }
+  .overview-card h3 { font-size: 10pt; margin-bottom: 4px; }
+  .overview-card p { font-size: 8pt; opacity: 0.9; }
+
+  .week-section {
+    margin-bottom: 18px;
+    page-break-inside: avoid;
+  }
+  .week-title {
+    background: linear-gradient(135deg, #2d3436, #636e72);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px 8px 0 0;
+    font-size: 11pt;
+    font-weight: 600;
+  }
+  .week-title span { float: right; font-size: 9pt; font-weight: normal; opacity: 0.8; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0;
+  }
+  th {
+    background: #dfe6e9;
+    padding: 6px 8px;
+    text-align: left;
+    font-size: 8.5pt;
+    font-weight: 600;
+    border: 1px solid #b2bec3;
+  }
+  td {
+    padding: 5px 8px;
+    border: 1px solid #dfe6e9;
+    vertical-align: top;
+    font-size: 8.5pt;
+  }
+  tr:nth-child(even) { background: #f8f9fa; }
+  .time-col { width: 12%; font-weight: 600; color: #6c5ce7; white-space: nowrap; }
+  .topic-col { width: 30%; }
+  .activity-col { width: 38%; }
+  .resource-col { width: 20%; font-size: 7.5pt; color: #636e72; }
+
+  .milestone {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 8px 12px;
+    margin: 8px 0;
+    border-radius: 0 6px 6px 0;
+    font-size: 8.5pt;
+  }
+  .milestone strong { color: #856404; }
+
+  .tips-section {
+    background: #e8f4f8;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+  }
+  .tips-section h2 { font-size: 12pt; color: #0984e3; margin-bottom: 10px; }
+  .tips-section ul { padding-left: 20px; }
+  .tips-section li { font-size: 9pt; margin-bottom: 4px; }
+
+  .resources-section {
+    background: #f0f0f0;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+  }
+  .resources-section h2 { font-size: 12pt; color: #2d3436; margin-bottom: 10px; }
+  .resources-section table { font-size: 8pt; }
+  .resources-section td { padding: 4px 6px; }
+
+  .footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 8pt;
+    color: #636e72;
+    border-top: 1px solid #dfe6e9;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 7pt;
+    font-weight: 600;
+    margin-left: 4px;
+  }
+  .badge-theory { background: #dfe6e9; color: #2d3436; }
+  .badge-practice { background: #d4edda; color: #155724; }
+  .badge-project { background: #f8d7da; color: #721c24; }
+  .badge-review { background: #fff3cd; color: #856404; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 Data Scientist Learning Timetable</h1>
+  <p>8-Week Intensive Plan | 8 Hours/Day | 9:00 AM – 5:00 PM</p>
+  <p class="subtitle">Python • SQL • Pandas • NumPy • Machine Learning</p>
+</div>
+
+<div class="overview">
+  <div class="overview-card phase1">
+    <h3>Phase 1 (Wk 1-2)</h3>
+    <p>Python Fundamentals</p>
+  </div>
+  <div class="overview-card phase2">
+    <h3>Phase 2 (Wk 3-4)</h3>
+    <p>SQL & Databases</p>
+  </div>
+  <div class="overview-card phase3">
+    <h3>Phase 3 (Wk 5-6)</h3>
+    <p>Pandas & NumPy</p>
+  </div>
+  <div class="overview-card phase4">
+    <h3>Phase 4 (Wk 7-8)</h3>
+    <p>Machine Learning</p>
+  </div>
+</div>
+
+<!-- WEEK 1 -->
+<div class="week-section">
+  <div class="week-title">Week 1: Python Basics <span>Phase 1 — Python Fundamentals</span></div>
+  <table>
+    <tr><th class="time-col">Time</th><th class="topic-col">Topic</th><th class="activity-col">Activity</th><th class="resource-col">Resources</th></tr>
+    <tr><td class="time-col">9:00 – 10:30</td><td class="topic-col">Variables & Data Types</td><td class="activity-col">Learn int, float, str, bool. Practice type conversion and string formatting.</td><td class="resource-col">Python.org Tutorial Ch.1-2</td></tr>
+    <tr><td class="time-col">10:30 – 10:45</td><td class="topic-col">☕ Break</td><td class="activity-col">Short break</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">10:45 – 12:30</td><td class="topic-col">Strings Deep Dive</td><td class="activity-col">Slicing, methods (split, join, replace, strip), f-strings. Solve 10 string problems.</td><td class="resource-col">W3Schools Python Strings</td></tr>
+    <tr><td class="time-col">12:30 – 1:30</td><td class="topic-col">🍽️ Lunch Break</td><td class="activity-col">—</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">1:30 – 3:00</td><td class="topic-col">Lists, Tuples & Sets</td><td class="activity-col">Operations, methods, differences. Practice with 15 list exercises.</td><td class="resource-col">Automate Boring Stuff Ch.4-5</td></tr>
+    <tr><td class="time-col">3:00 – 3:15</td><td class="topic-col">☕ Break</td><td class="activity-col">Short break</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">3:15 – 5:00</td><td class="topic-col">Dictionaries</td><td class="activity-col">Key-value pairs, nesting, iteration. Build a phonebook app.</td><td class="resource-col">Python Crash Course Ch.6</td></tr>
+  </table>
+</div>
+
+<!-- WEEK 2 -->
+<div class="week-section">
+  <div class="week-title">Week 2: Intermediate Python <span>Phase 1 — Python Fundamentals</span></div>
+  <table>
+    <tr><th class="time-col">Time</th><th class="topic-col">Topic</th><th class="activity-col">Activity</th><th class="resource-col">Resources</th></tr>
+    <tr><td class="time-col">9:00 – 10:30</td><td class="topic-col">Conditionals & Logic</td><td class="activity-col">if/elif/else, comparison & logical operators. Solve 20 conditional problems.</td><td class="resource-col">HackerRank Python</td></tr>
+    <tr><td class="time-col">10:30 – 10:45</td><td class="topic-col">☕ Break</td><td class="activity-col">Short break</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">10:45 – 12:30</td><td class="topic-col">Loops (for & while)</td><td class="activity-col">break, continue, nested loops, range(). Solve 25 loop problems.</td><td class="resource-col">LeetCode Easy</td></tr>
+    <tr><td class="time-col">12:30 – 1:30</td><td class="topic-col">🍽️ Lunch Break</td><td class="activity-col">—</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">1:30 – 3:00</td><td class="topic-col">Functions</td><td class="activity-col">Parameters, return values, scope, *args, **kwargs, lambda. Write 10 functions.</td><td class="resource-col">Python Crash Course Ch.8</td></tr>
+    <tr><td class="time-col">3:00 – 3:15</td><td class="topic-col">☕ Break</td><td class="activity-col">Short break</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">3:15 – 5:00</td><td class="topic-col">Comprehensions & File I/O</td><td class="activity-col">List/dict comprehensions, reading/writing files, error handling (try/except).</td><td class="resource-col">Automate Boring Stuff Ch.8-10</td></tr>
+  </table>
+  <div class="milestone"><strong>✅ Milestone:</strong> Build a CLI mini-project (To-Do List or Quiz Game) using all Week 1-2 concepts.</div>
+</div>
+
+<!-- WEEK 3 -->
+<div class="week-section">
+  <div class="week-title">Week 3: SQL Fundamentals <span>Phase 2 — SQL & Databases</span></div>
+  <table>
+    <tr><th class="time-col">Time</th><th class="topic-col">Topic</th><th class="activity-col">Activity</th><th class="resource-col">Resources</th></tr>
+    <tr><td class="time-col">9:00 – 10:30</td><td class="topic-col">DB Basics & SELECT</td><td class="activity-col">Relational DB concepts, tables/rows/columns. Practice SELECT, FROM, WHERE.</td><td class="resource-col">SQLBolt Lesson 1-3</td></tr>
+    <tr><td class="time-col">10:30 – 10:45</td><td class="topic-col">☕ Break</td><td class="activity-col">Short break</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">10:45 – 12:30</td><td class="topic-col">Filtering & Sorting</td><td class="activity-col">ORDER BY, LIMIT, DISTINCT, AND/OR/NOT, BETWEEN, LIKE, IN.</td><td class="resource-col">SQLBolt Lesson 4-6</td></tr>
+    <tr><td class="time-col">12:30 – 1:30</td><td class="topic-col">🍽️ Lunch Break</td><td class="activity-col">—</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">1:30 – 3:00</td><td class="topic-col">Aggregate Functions</td><td class="activity-col">COUNT, SUM, AVG, MIN, MAX. GROUP BY, HAVING. Solve 20 aggregation queries.</td><td class="resource-col">Mode SQL Tutorial</td></tr>
+    <tr><td class="time-col">3:00 – 3:15</td><td class="topic-col">☕ Break</td><td class="activity-col">Short break</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">3:15 – 5:00</td><td class="topic-col">Practice & Challenges</td><td class="activity-col">Complete 30 SQL queries on sample datasets (Chinook DB, Employees DB).</td><td class="resource-col">HackerRank SQL</td></tr>
+  </table>
+</div>
+
+<!-- WEEK 4 -->
+<div class="week-section">
+  <div class="week-title">Week 4: Advanced SQL + Python Integration <span>Phase 2 — SQL & Databases</span></div>
+  <table>
+    <tr><th class="time-col">Time</th><th class="topic-col">Topic</th><th class="activity-col">Activity</th><th class="resource-col">Resources</th></tr>
+    <tr><td class="time-col">9:00 – 10:30</td><td class="topic-col">JOINs</td><td class="activity-col">INNER, LEFT, RIGHT, FULL JOIN. Visualize joins, solve 15 join problems.</td><td class="resource-col">SQLBolt Lesson 7-9</td></tr>
+    <tr><td class="time-col">10:30 – 10:45</td><td class="topic-col">☕ Break</td><td class="activity-col">Short break</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">10:45 – 12:30</td><td class="topic-col">Subqueries & CTEs</td><td class="activity-col">Nested queries, WITH clause, correlated subqueries.</td><td class="resource-col">Mode SQL Tutorial</td></tr>
+    <tr><td class="time-col">12:30 – 1:30</td><td class="topic-col">🍽️ Lunch Break</td><td class="activity-col">—</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">1:30 – 3:00</td><td class="topic-col">Window Functions</td><td class="activity-col">ROW_NUMBER, RANK, DENSE_RANK, PARTITION BY, running totals.</td><td class="resource-col">PostgreSQL Tutorial</td></tr>
+    <tr><td class="time-col">3:00 – 3:15</td><td class="topic-col">☕ Break</td><td class="activity-col">Short break</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">3:15 – 5:00</td><td class="topic-col">Python + SQL</td><td class="activity-col">sqlite3 library, SQLAlchemy ORM. Build a Python app that queries a database.</td><td class="resource-col">Real Python SQLite</td></tr>
+  </table>
+  <div class="milestone"><strong>✅ Milestone:</strong> Query a real dataset (Kaggle Titanic) using both SQL and Python. Complete 50+ SQL queries.</div>
+</div>
+
+<!-- WEEK 5 -->
+<div class="week-section">
+  <div class="week-title">Week 5: NumPy <span>Phase 3 — Pandas & NumPy</span></div>
+  <table>
+    <tr><th class="time-col">Time</th><th class="topic-col">Topic</th><th class="activity-col">Activity</th><th class="resource-col">Resources</th></tr>
+    <tr><td class="time-col">9:00 – 10:30</td><td class="topic-col">NumPy Arrays</td><td class="activity-col">Creating arrays, vs Python lists, data types, shape, reshape.</td><td class="resource-col">NumPy Quickstart</td></tr>
+    <tr><td class="time-col">10:30 – 10:45</td><td class="topic-col">☕ Break</td><td class="activity-col">Short break</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">10:45 – 12:30</td><td class="topic-col">Indexing & Slicing</td><td class="activity-col">1D/2D/3D indexing, boolean masking, fancy indexing.</td><td class="resource-col">NumPy Documentation</td></tr>
+    <tr><td class="time-col">12:30 – 1:30</td><td class="topic-col">🍽️ Lunch Break</td><td class="activity-col">—</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">1:30 – 3:00</td><td class="topic-col">Broadcasting & ufuncs</td><td class="activity-col">Universal functions, vectorized operations, broadcasting rules.</td><td class="resource-col">Python Data Science Handbook</td></tr>
+    <tr><td class="time-col">3:00 – 3:15</td><td class="topic-col">☕ Break</td><td class="activity-col">Short break</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">3:15 – 5:00</td><td class="topic-col">Linear Algebra & Random</td><td class="activity-col">Dot product, matrix ops, random number generation, seeding.</td><td class="resource-col">Kaggle NumPy Course</td></tr>
+  </table>
+</div>
+
+<!-- WEEK 6 -->
+<div class="week-section">
+  <div class="week-title">Week 6: Pandas <span>Phase 3 — Pandas & NumPy</span></div>
+  <table>
+    <tr><th class="time-col">Time</th><th class="topic-col">Topic</th><th class="activity-col">Activity</th><th class="resource-col">Resources</th></tr>
+    <tr><td class="time-col">9:00 – 10:30</td><td class="topic-col">Series & DataFrames</td><td class="activity-col">Creating, head(), info(), describe(), dtypes, shape.</td><td class="resource-col">Kaggle Pandas Course</td></tr>
+    <tr><td class="time-col">10:30 – 10:45</td><td class="topic-col">☕ Break</td><td class="activity-col">Short break</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">10:45 – 12:30</td><td class="topic-col">Selecting & Filtering</td><td class="activity-col">loc[], iloc[], boolean filtering, query(), isin().</td><td class="resource-col">10 Minutes to Pandas</td></tr>
+    <tr><td class="time-col">12:30 – 1:30</td><td class="topic-col">🍽️ Lunch Break</td><td class="activity-col">—</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">1:30 – 3:00</td><td class="topic-col">Missing Data & groupby</td><td class="activity-col">fillna(), dropna(), groupby(), agg(), pivot_table().</td><td class="resource-col">Pandas Documentation</td></tr>
+    <tr><td class="time-col">3:00 – 3:15</td><td class="topic-col">☕ Break</td><td class="activity-col">Short break</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">3:15 – 5:00</td><td class="topic-col">Merging, Joining & Dates</td><td class="activity-col">merge(), concat(), join(), datetime handling, apply(), map().</td><td class="resource-col">Python Data Science Handbook</td></tr>
+  </table>
+  <div class="milestone"><strong>✅ Milestone:</strong> Complete a full EDA project on any Kaggle dataset using Pandas + NumPy.</div>
+</div>
+
+<!-- WEEK 7 -->
+<div class="week-section">
+  <div class="week-title">Week 7: ML Foundations <span>Phase 4 — Machine Learning</span></div>
+  <table>
+    <tr><th class="time-col">Time</th><th class="topic-col">Topic</th><th class="activity-col">Activity</th><th class="resource-col">Resources</th></tr>
+    <tr><td class="time-col">9:00 – 10:30</td><td class="topic-col">ML Intro & Types</td><td class="activity-col">Supervised vs Unsupervised, regression vs classification, ML workflow.</td><td class="resource-col">Google ML Crash Course</td></tr>
+    <tr><td class="time-col">10:30 – 10:45</td><td class="topic-col">☕ Break</td><td class="activity-col">Short break</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">10:45 – 12:30</td><td class="topic-col">Train/Test Split & Overfitting</td><td class="activity-col">Splitting data, cross-validation, bias-variance tradeoff.</td><td class="resource-col">Scikit-learn Docs</td></tr>
+    <tr><td class="time-col">12:30 – 1:30</td><td class="topic-col">🍽️ Lunch Break</td><td class="activity-col">—</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">1:30 – 3:00</td><td class="topic-col">Linear Regression</td><td class="activity-col">Theory + implementation with scikit-learn. Build first regression model.</td><td class="resource-col">Andrew Ng ML Course</td></tr>
+    <tr><td class="time-col">3:00 – 3:15</td><td class="topic-col">☕ Break</td><td class="activity-col">Short break</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">3:15 – 5:00</td><td class="topic-col">Logistic Regression & Metrics</td><td class="activity-col">Classification, accuracy, precision, recall, F1-score, confusion matrix.</td><td class="resource-col">Google ML Crash Course</td></tr>
+  </table>
+</div>
+
+<!-- WEEK 8 -->
+<div class="week-section">
+  <div class="week-title">Week 8: Advanced ML + Final Project <span>Phase 4 — Machine Learning</span></div>
+  <table>
+    <tr><th class="time-col">Time</th><th class="topic-col">Topic</th><th class="activity-col">Activity</th><th class="resource-col">Resources</th></tr>
+    <tr><td class="time-col">9:00 – 10:30</td><td class="topic-col">KNN & Decision Trees</td><td class="activity-col">K-Nearest Neighbors, Decision Trees, Random Forests. Compare models.</td><td class="resource-col">Scikit-learn Tutorial</td></tr>
+    <tr><td class="time-col">10:30 – 10:45</td><td class="topic-col">☕ Break</td><td class="activity-col">Short break</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">10:45 – 12:30</td><td class="topic-col">Hyperparameter Tuning</td><td class="activity-col">GridSearchCV, RandomizedSearchCV, cross-validation strategies.</td><td class="resource-col">Kaggle ML Course</td></tr>
+    <tr><td class="time-col">12:30 – 1:30</td><td class="topic-col">🍽️ Lunch Break</td><td class="activity-col">—</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">1:30 – 3:00</td><td class="topic-col">Feature Engineering & Scaling</td><td class="activity-col">Encoding, scaling (StandardScaler, MinMaxScaler), feature selection.</td><td class="resource-col">Feature Engineering Book</td></tr>
+    <tr><td class="time-col">3:00 – 3:15</td><td class="topic-col">☕ Break</td><td class="activity-col">Short break</td><td class="resource-col">—</td></tr>
+    <tr><td class="time-col">3:15 – 5:00</td><td class="topic-col">🎯 Final Project</td><td class="activity-col">End-to-end ML project: dataset → EDA → clean → model → evaluate → present.</td><td class="resource-col">Kaggle Competitions</td></tr>
+  </table>
+  <div class="milestone"><strong>✅ Final Milestone:</strong> Complete an ML portfolio project. Write project summary, update GitHub & resume.</div>
+</div>
+
+<!-- TIPS -->
+<div class="tips-section">
+  <h2>💡 Daily Tips for Success</h2>
+  <ul>
+    <li><strong>Code every day</strong> — consistency beats cramming. Type all code manually.</li>
+    <li><strong>Use the Pomodoro technique</strong> — 50 min focus + 10 min break during study blocks.</li>
+    <li><strong>Build projects</strong> — they matter more than certificates for job applications.</li>
+    <li><strong>Use Anki/flashcards</strong> — for SQL syntax, Pandas methods, and ML concepts.</li>
+    <li><strong>Join communities</strong> — r/datascience, Kaggle forums, Discord servers for support.</li>
+    <li><strong>Teach what you learn</strong> — write blog posts or explain concepts to reinforce learning.</li>
+    <li><strong>Track progress</strong> — maintain a learning journal or GitHub commit history.</li>
+  </ul>
+</div>
+
+<!-- RESOURCES -->
+<div class="resources-section">
+  <h2>📚 Recommended Free Resources</h2>
+  <table>
+    <tr><th>Topic</th><th>Resource</th><th>Link</th></tr>
+    <tr><td>Python</td><td>Automate the Boring Stuff</td><td>automatetheboringstuff.com</td></tr>
+    <tr><td>Python</td><td>Python Crash Course (Book)</td><td>nostarch.com/pythoncrashcourse2e</td></tr>
+    <tr><td>SQL</td><td>SQLBolt</td><td>sqlbolt.com</td></tr>
+    <tr><td>SQL</td><td>Mode SQL Tutorial</td><td>mode.com/sql-tutorial</td></tr>
+    <tr><td>Pandas</td><td>Kaggle Pandas Course</td><td>kaggle.com/learn/pandas</td></tr>
+    <tr><td>Pandas</td><td>10 Minutes to Pandas</td><td>pandas.pydata.org/docs</td></tr>
+    <tr><td>NumPy</td><td>NumPy Quickstart</td><td>numpy.org/doc/stable</td></tr>
+    <tr><td>ML</td><td>Google ML Crash Course</td><td>developers.google.com/machine-learning/crash-course</td></tr>
+    <tr><td>ML</td><td>Andrew Ng's ML Specialization</td><td>coursera.org/specializations/machine-learning-introduction</td></tr>
+    <tr><td>Practice</td><td>LeetCode (Python)</td><td>leetcode.com</td></tr>
+    <tr><td>Practice</td><td>HackerRank SQL</td><td>hackerrank.com/domains/sql</td></tr>
+    <tr><td>Practice</td><td>Kaggle</td><td>kaggle.com</td></tr>
+  </table>
+</div>
+
+<div class="footer">
+  🚀 After 8 weeks: Solid Python • SQL Proficiency • Pandas/NumPy Expertise • Foundational ML • Portfolio Projects — Ready for Junior Data Scientist Roles!
+</div>
+
+</body>
+</html>
