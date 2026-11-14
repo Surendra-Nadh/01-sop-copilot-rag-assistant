@@ -1,16 +1,27 @@
 """Retrieval + answer with citations (RAG core).
-Used by api.py and app.py. Can also test directly:
   python src/retrieve.py
 """
+
 import json
 import os
 from pathlib import Path
+import sys
+
+# Ensure the project root directory is in sys.path so config can be imported when running from src/
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import faiss
 import numpy as np
 from dotenv import load_dotenv
 
-from src.config import INDEX_PATH, CHUNKS_PATH, EMBEDDING_MODEL, TOP_K
+try:
+    from config import INDEX_PATH, CHUNKS_PATH, EMBEDDING_MODEL, TOP_K
+except ImportError:
+    # Fallback default configurations if config.py cannot be resolved
+    INDEX_PATH = Path("faiss_index/sop_index.faiss")
+    CHUNKS_PATH = Path("faiss_index/chunks.json")
+    EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+    TOP_K = 4
 
 load_dotenv()
 
